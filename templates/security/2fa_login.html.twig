@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}2 facteurs en cours....
+{% endblock %}
+
+{% block body %}
+	<img
+	id="imageQRcode" name="imageQRcode" src="{{ url }}" alt=""/>
+	{# pour l'action, on aurait pu mettre '/2fa' mais on a choisi de mettre le NOM de la route #}
+	<form action="/2fa_check" method="POST">
+		<input type="text" id="_auth_code" name="_auth_code" autocomplete="one-time-code" autofocus/>
+		<input type="submit" value="login"/>
+	</form>
+	<p>
+		<a href="{{ path('app_logout') }}">Annuler</a>
+	</p>
+{% endblock %}
