@@ -3,6 +3,12 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style type="text/css">
+  body {
+    background-color:pink;
+      }
+</style>
 <form method="post" id="connexionForm">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -35,7 +41,7 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary g-recaptcha"
+    <button class="btn button btn-lg btn-primary g-recaptcha"
             data-sitekey="6Lf8BawZAAAAAC6nRg9sFap0YKUVsBTjiYr_fPfP"
             data-callback='onSubmit'
             data-action='submit'
